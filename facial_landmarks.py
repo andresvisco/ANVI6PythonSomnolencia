@@ -1,7 +1,7 @@
 # USAGE
-# python facial_landmarks.py --shape-predictor shape_predictor_68_face_landmarks.dat --image images/example_01.jpg 
+# python facial_landmarks.py
 
-# import the necessary packages
+
 from imutils import face_utils
 import numpy as np
 import argparse
@@ -45,7 +45,7 @@ xaLimiteL=36
 xaLimiteU=40
 font = cv2.FONT_HERSHEY_SIMPLEX
 headers = {'Content-type': 'application/json'}
-url="https://api.powerbi.com/beta/864ee999-c538-44a0-bddd-0449de62df6d/datasets/486df8a5-7ba5-4b0b-a427-49106ce3eed8/rows?key=rVG4IqlILgO9dCeE9Px9Ad3L8et8p3OsxiyrE0JQsaFNsRbVOAU6DcjrLnnQ28PsOHBSU9%2BMtxLFQT0%2BVZh8JA%3D%3D"
+url="[your powerbi]"
 
 
 def enviarDatos(datosJson):
@@ -112,25 +112,3 @@ while True:
 
 
 
-# show the output image with the face detections + facial landmarks
-
-
-##while True:
-##    frame = vs.read()
-##    frame = imutils.resize(frame, width=600)
-##    (h, w) = frame.shape[:2]
-#    
-##    imageBlob = cv2.dnn.blobFromImage(cv2.resize(frame, (300, 300))
-##    , 1.0, (300, 300),	(104.0, 177.0, 123.0), swapRB=False, crop=False)
-#    
-##    detector.run(predictor, imageBlob)
-#
-#for (i, rect) in enumerate(rects):
-#    shape = predictor(gray, rect)
-#    shape = face_utils.shape_to_np(shape)
-#    (x, y, w, h) = face_utils.rect_to_bb(rect)
-#    cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
-#    cv2.putText(image, "Face #{}".format(i + 1), (x - 10, y - 10)
-#    ,cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-#    for (x, y) in shape:
-#        cv2.circle(image, (x, y), 1, (0, 0, 255), -1)
